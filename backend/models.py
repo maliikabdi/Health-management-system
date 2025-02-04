@@ -11,7 +11,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(200), nullable=True)
+    password = db.Column(db.String(512), nullable=True)
     is_doctor = db.Column(db.Boolean, default=False)
     is_patient = db.Column(db.Boolean, default=False)
     is_verified = db.Column(db.Boolean, default=True)

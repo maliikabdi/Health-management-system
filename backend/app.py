@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 # migration initialization
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///health.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://healthdb_fspf_user:8spW1RVTawnnGt6jqA3pgYTgfCO3tccb@dpg-cuh64m3tq21c73f7rq10-a.oregon-postgres.render.com/healthdb_fspf'
 migrate = Migrate(app, db)
 db.init_app(app)
 
