@@ -18,7 +18,7 @@ const [patients, setPatients] = useState([])
     const login = (email, password) =>
     {
         toast.loading("Logging you in ... ")
-        fetch("http://127.0.0.1:5000/login",{
+        fetch("https://health-management-system-or50.onrender.com/login",{
             method:"POST",
             headers: {
                 'Content-type': 'application/json',
@@ -37,7 +37,7 @@ const [patients, setPatients] = useState([])
 
                 setAuthToken(response.access_token)
 
-                fetch('http://127.0.0.1:5000/currentUser',{
+                fetch('https://health-management-system-or50.onrender.com/currentUser',{
                     method:"GET",
                     headers: {
                         'Content-type': 'application/json',
@@ -75,7 +75,7 @@ const [patients, setPatients] = useState([])
     {
 
         toast.loading("Logging out ... ")
-        fetch("http://127.0.0.1:5000/logout",{
+        fetch("https://health-management-system-or50.onrender.com/logout",{
             method:"DELETE",
             headers: {
                 'Content-type': 'application/json',
@@ -111,7 +111,7 @@ const [patients, setPatients] = useState([])
     {
 
 
-        fetch('http://127.0.0.1:5000/currentUser',{
+        fetch('https://health-management-system-or50.onrender.com/currentUser',{
             method:"GET",
             headers: {
                 'Content-type': 'application/json',
@@ -126,14 +126,14 @@ const [patients, setPatients] = useState([])
         });
     };
 
-    
+
 
 
     // ADD dcotor
     const addDoctor = (name, email, password) =>
     {
         toast.loading("Registering ... ")
-        fetch("http://127.0.0.1:5000/doctors",{
+        fetch("https://health-management-system-or50.onrender.com/doctors",{
             method:"POST",
             headers: {
                 'Content-type': 'application/json',
@@ -173,7 +173,7 @@ const [patients, setPatients] = useState([])
     const addPatient = (name, email) =>
         {
             toast.loading("Registering ... ")
-            fetch("http://127.0.0.1:5000/patient",{
+            fetch("https://health-management-system-or50.onrender.com/patient",{
                 method:"POST",
                 headers: {
                     'Content-type': 'application/json',
@@ -186,7 +186,7 @@ const [patients, setPatients] = useState([])
             .then((resp)=>resp.json())
             .then((response)=>{
                 console.log(response);
-    
+
                 if(response.success){
                     toast.dismiss()
                     toast.success(response.success)
@@ -194,17 +194,17 @@ const [patients, setPatients] = useState([])
                     fetchPatients()
                 }
                 else if(response.error){
-                    toast.dismiss()     
+                    toast.dismiss()
                     toast.error(response.error)
-    
+
                 }
                 else{
                     toast.dismiss()
                     toast.error("Failed to add patient")
-    
+
                 }
             })
-    
+
         };
 
 
@@ -213,7 +213,7 @@ const [patients, setPatients] = useState([])
     const updatePatient = (id, formData) =>
     {
         toast.loading("Updating ... ")
-        fetch(`http://127.0.0.1:5000/patient/${id}`,{
+        fetch(`https://health-management-system-or50.onrender.com/patient/${id}`,{
             method:"PUT",
             headers: {
                 'Content-type': 'application/json',
@@ -232,7 +232,7 @@ const [patients, setPatients] = useState([])
                 fetchPatients()
             }
             else if(response.error){
-                toast.dismiss()     
+                toast.dismiss()
                 toast.error(response.error)
 
             }
@@ -248,7 +248,7 @@ const [patients, setPatients] = useState([])
     const deletePatient =  (patientId) =>
     {
         toast.loading("Deleting ... ")
-        fetch(`http://127.0.0.1:5000/patient/${patientId}`,{
+        fetch(`https://health-management-system-or50.onrender.com/patient/${patientId}`,{
             method:"DELETE",
             headers: {
                 'Content-type': 'application/json',
@@ -280,7 +280,7 @@ const [patients, setPatients] = useState([])
     }, [])
     const fetchPatients = () =>
     {
-        fetch('http://127.0.0.1:5000/patients',{
+        fetch('https://health-management-system-or50.onrender.com/patients',{
             method:"GET",
             headers: {
                 'Content-type': 'application/json',
@@ -296,12 +296,12 @@ const [patients, setPatients] = useState([])
 
     // Prescription=======================================
 
-     
+
 
 
 
         const createPrescription = (patient_id, data) => {
-            fetch("http://127.0.0.1:5000/prescriptions", {
+            fetch("https://health-management-system-or50.onrender.com/prescriptions", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -317,7 +317,7 @@ const [patients, setPatients] = useState([])
 
 
         const updatePrescription = (prescription_id, data) => {
-            fetch(`http://127.0.0.1:5000/prescriptions/${prescription_id}`, {
+            fetch(`https://health-management-system-or50.onrender.com/prescriptions/${prescription_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -326,10 +326,10 @@ const [patients, setPatients] = useState([])
             body: JSON.stringify(data),
             })
             .then((res) => res.json())
-            .then((response) => 
+            .then((response) =>
                 {
                     if(response.success){
-                        toast.success(response.success)                    
+                        toast.success(response.success)
                         fetchPatients()
                     }
                     else{
@@ -337,14 +337,14 @@ const [patients, setPatients] = useState([])
                     }
 
         })
-            
-        
+
+
         };
 
-        
+
     //  Delet prescriptions
         const deletePrescription = (prescription_id, patient_id) => {
-            fetch(`http://127.0.0.1:5000/prescriptions/${prescription_id}`, {
+            fetch(`https://health-management-system-or50.onrender.com/prescriptions/${prescription_id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -354,21 +354,21 @@ const [patients, setPatients] = useState([])
             .then(res=>res.json())
             .then((res) => {
                 console.log(res);
-                
+
                if(res.success){
-                   toast.success(res.success) 
+                   toast.success(res.success)
                 fetchPatients()
 
                 }
                 else{
                   toast.error("Error deleting prescription")
                 }
-                
+
         })
 
         };
 
-      
+
   const data = {
     authToken,
     login,
@@ -384,7 +384,7 @@ const [patients, setPatients] = useState([])
     createPrescription,
     updatePrescription,
     deletePrescription,
-      
+
   };
 
   return (
