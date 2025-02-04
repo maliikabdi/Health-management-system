@@ -26,7 +26,7 @@ The **Health Management System** is a web-based platform designed to streamline 
    cd health-management-system
    video : https://www.loom.com/share/756ab7afcd154f61bdaef45cc07e6535?sid=731320ce-af5f-4cbc-9977-13745779edb5
    frontend: https://github.com/maliikabdi/health-management-system/tree/main/frontend
-   backend
+   backend : https://github.com/maliikabdi/health-management-system/tree/main/backend
    ```
 
 2. **Backend Setup:**
