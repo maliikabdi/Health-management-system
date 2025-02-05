@@ -10,6 +10,9 @@ The **Health Management System** is a web-based platform designed to streamline 
 - **Prescription Management:** Add, update, and view prescriptions.
 - **Appointment Scheduling:** Book, manage, and track appointments.
 - **Profile Management:** Update user information and health data.
+- **Access links :  video : https://www.loom.com/share/756ab7afcd154f61bdaef45cc07e6535?sid=13a23ae1-f047-49fd-ba11-fd1c24f31ac6
+   frontend: https://github.com/maliikabdi/health-management-system/tree/main/frontend
+   backend : https://github.com/maliikabdi/health-management-system/tree/main/backend
 
 ## Technologies Used
 - **Frontend:** React (responsive UI with organized components and pages)
@@ -24,9 +27,7 @@ The **Health Management System** is a web-based platform designed to streamline 
    ```bash
    git clone git@github.com:maliikabdi/health-management-system.git
    cd health-management-system
-   video : https://www.loom.com/share/756ab7afcd154f61bdaef45cc07e6535?sid=13a23ae1-f047-49fd-ba11-fd1c24f31ac6
-   frontend: https://github.com/maliikabdi/health-management-system/tree/main/frontend
-   backend : https://github.com/maliikabdi/health-management-system/tree/main/backend
+  
    ```
 
 2. **Backend Setup:**
